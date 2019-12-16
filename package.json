@@ -1,5 +1,5 @@
 {
-  "name": "buddy-system-cwmp",
+  "name": "buddy-system-mpcw",
   "version": "1.0.0",
   "engines": {
     "node": "12.13.1"
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build -- prod",
-    "start": "serve -s dist/BuddySystemCwmp"
+    "start": "serve -s dist/BuddySystemMpcw"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +31,7 @@
     "material-design-icons": "^3.0.1",
     "material-icons": "^0.3.1",
     "rxjs": "~6.4.0",
+    "serialize-javascript": "^2.1.2",
     "serve": "^11.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

@@ -1,0 +1,20 @@
+<h1>Remove Additional Buddy</h1>
+<h4>Are you sure you want to remove this Additional Buddy from Trip?</h4>
+<hr />
+
+<div *ngIf="additionalBuddy">
+    <div>
+        <label>Additional Buddy Id: </label>
+        <span>{{additionalBuddy.AdditionalBuddyId}}</span>
+    </div>
+    <div>
+            <label>Buddy Id: </label>
+            <span>{{additionalBuddy.BuddyId}}</span>
+        </div>
+    <div>
+        <label>Trip Id: </label>
+        <span>{{additionalBuddy.TripId}}</span>
+    </div>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+<button mat-raised-button color="primary" routerLink="/trip">Back to List</button>

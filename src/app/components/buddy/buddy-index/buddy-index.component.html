@@ -1,0 +1,51 @@
+<h1>All Buddies</h1>
+<a mat-raised-button color="primary" routerLink="/buddies/create">Create New</a> | 
+<a mat-raised-button color="primary" routerLink="/trip">See All Trips</a>
+<hr />
+
+<div>
+    <mat-table [dataSource]='dataSource'>
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+            <mat-cell *matCellDef="let buddy">
+                <i class="material-icons" routerLink="/buddies/detail/{{buddy.BuddyId}}">library_books</i>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Name">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize">Name</mat-header-cell>
+            <mat-cell *matCellDef="let buddy">{{buddy.Name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="IsApproved">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize">IsApproved</mat-header-cell>
+            <mat-cell *matCellDef="let buddy">{{buddy.IsApproved}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="CurrentLocation">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize">CurrentLocation</mat-header-cell>
+            <mat-cell *matCellDef="let buddy">{{buddy.CurrentLocation}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="IsMale">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize">IsMale</mat-header-cell>
+            <mat-cell *matCellDef="let buddy">{{buddy.IsMale}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Age">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize">Age</mat-header-cell>
+            <mat-cell *matCellDef="let buddy">{{buddy.Age}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="buttons">
+			<mat-header-cell *matHeaderCellDef class="matColumnSize">Options</mat-header-cell>
+			<mat-cell *matCellDef="let buddy">
+				<i class="material-icons" routerLink="/buddies/edit/{{buddy.BuddyId}}">edit</i>
+				<i class="material-icons" routerLink="/buddies/delete/{{buddy.BuddyId}}">delete</i>
+			</mat-cell>
+		</ng-container>
+    </mat-table>
+</div>

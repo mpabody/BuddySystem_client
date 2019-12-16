@@ -1,0 +1,35 @@
+<h1>Edit a Buddy</h1>
+<hr />
+
+<div *ngIf="buddy">
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput placeholder="BuddyId" formControlName="BuddyId" type="number" required [value]="buddy.BuddyId" />
+            </div>
+            <div mat-form-field>
+                <label><b>Buddy Name</b></label><br/>
+                <input matInput placeholder="Name" formControlName="Name" type="string" required [value]="buddy.Name" />
+            </div>
+            <div mat-form-field>
+                    <label><b>Current Location</b></label><br/>
+                <input matInput placeholder="CurrentLocation" formControlName="CurrentLocation" type="string" required [value]="buddy.CurrentLocation" />
+            </div>
+            <div mat-form-field>
+                    <label><b>Approved to Volunteer</b></label><br/>
+                <input matInput placeholder="Is Approved" formControlName="IsApproved" type="boolean" required [value]="buddy.IsApproved" />
+            </div>
+            <div mat-form-field>
+                    <label><b>Is Male</b></label><br/>
+                <input matInput placeholder="Is Male" formControlName="IsMale" type="boolean" required [value]="buddy.IsMale" />
+            </div>
+            <div mat-form-field>
+                    <label><b>Age</b></label><br/>
+                <input matInput placeholder="Age" formControlName="Age" type="number" required [value]="buddy.Age" />
+            </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    </form>
+</div>
+
+<a mat-button routerLink="/buddies/current-user">Back to List</a>

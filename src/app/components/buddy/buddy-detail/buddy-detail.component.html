@@ -1,0 +1,43 @@
+<h1>Details</h1>
+<hr />
+
+<div *ngIf="buddy">
+    <div>
+        <label>BuddyId: </label>
+        <span>{{buddy.BuddyId}}</span>
+    </div>
+    <div>
+        <label>Name: </label>
+        <span>{{buddy.Name}}</span>
+    </div>
+    <div>
+        <label>Current Location: </label>
+        <span>{{buddy.CurrentLocation}}</span>
+    </div>
+    <div>
+        <label>Is Approved: </label>
+        <span>{{buddy.IsApproved}}</span>
+    </div>
+    <div>
+        <label>Is Male: </label>
+        <span>{{buddy.IsMale}}</span>
+    </div>
+    <div>
+        <label>Age: </label>
+        <span>{{buddy.Age}}</span>
+    </div>
+    <br/>
+    
+    <div>
+        <label><b>List of Trips:</b> </label>
+        <div *ngFor="let trip of buddy.BuddyTrips">Start Location: {{trip.StartLocation}} <br/>End Location {{trip.EndLocation}} <br/>Volunteer: {{trip.VolunteerName}} <br/><br/></div>
+    </div>
+    <div>
+        <label><b>List of Trips as Volunteer:</b> </label>
+        <div *ngFor="let trip of buddy.VolunteerTrips">Start Location: {{trip.StartLocation}} <br/>End Location {{trip.EndLocation}} <br/>Primary Buddy: {{trip.BuddyName}} <br/><br/></div>
+    </div>
+
+    <button mat-raised-button color="accent">Edit</button>
+</div>
+
+<button mat-raised-button color="primary" routerLink="/buddies">Back to List</button>

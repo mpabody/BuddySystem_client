@@ -1,0 +1,54 @@
+<h1>Create Trip</h1>
+<hr />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="tripForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Start Time" formControlName="StartTime" type="time" required />
+            </mat-form-field>
+        </div>
+        <div hidden>
+            <mat-form-field>
+                <input matInput placeholder="Buddy Id" formControlName="BuddyId" type="number" required />
+            </mat-form-field>
+        </div>
+        <div hidden>
+            <mat-form-field>
+                <input matInput placeholder="Volunteer Id" formControlName="VolunteerId" type="VolunteerId" required />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <label for="Volunteer">Volunteer </label>
+            <br />
+            <select class="form-control" id="buddy" required formControlName="VolunteerId">
+                <option *ngFor="let volunteer of listOfVolunteers" [value]="volunteer.BuddyId">{{volunteer.Name}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Start Location" formControlName="StartLocation" type="StartLocation"
+                    required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Projected End Location" formControlName="ProjectedEndLocation"
+                    type="ProjectedEndLocation" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="End Location" formControlName="EndLocation" type="EndLocation" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="End Time" formControlName="EndTime" type="time" required />
+            </mat-form-field>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Trip</button>
+
+
+        <a mat-button routerLink="/trip/TripsForCurrentUser">Back to List</a>

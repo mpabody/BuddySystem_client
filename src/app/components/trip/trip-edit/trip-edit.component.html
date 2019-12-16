@@ -1,0 +1,74 @@
+<h1>Edit This Trip</h1>
+<hr />
+
+<div *ngIf="trip">
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput placeholder="TripId" formControlName="TripId" type="number" required
+                    [value]="trip.TripId" />
+            </div>
+            <div mat-form-field>
+                <label><b>Start Time</b></label><br />
+                <input matInput placeholder="StartTime" formControlName="StartTime" type="StartTime" required
+                    [value]="trip.StartTime" />
+            </div>
+            <br/>
+
+            <div hidden>
+                <span>
+                <label for="buddyId"><b>BuddyId</b></label><br />
+                <input id="buddyId" matInput placeholder="Buddy ID" formControlName="BuddyId" type="number" required
+                    [value]="trip.BuddyId" />
+                </span>
+            </div>
+            
+            <div hidden>
+                <label><b>VolunteerId</b></label><br />
+                <input matInput placeholder="VolunteerId" formControlName="VolunteerId" type="number" required
+                    [value]="trip.VolunteerId" />
+            </div>
+
+            <div class="form-group">
+                <label for="trip">Volunteer </label>
+            <br/>
+            <select class="form-control" id="buddy" required formControlName="VolunteerId" >
+                    <option *ngFor="let volunteer of listOfVolunteers" [value]="volunteer.BuddyId">{{volunteer.Name}}</option>
+                </select>
+            </div>
+            <br/>
+
+            <div mat-form-field>
+                <label><b>Start Location</b></label><br />
+                <input matInput placeholder="StartLocation" formControlName="StartLocation" type="string" required
+                    [value]="trip.StartLocation" />
+            </div>
+            <br/>
+
+            <div mat-form-field>
+                <label><b>Projected End Location</b></label><br />
+                <input matInput placeholder="ProjectedEndLocation" formControlName="ProjectedEndLocation" type="string"
+                    required [value]="trip.ProjectedEndLocation" />
+            </div>
+            <br/>
+
+            <div mat-form-field>
+                <label><b>End Location</b></label><br />
+                <input matInput placeholder="EndLocation" formControlName="EndLocation" type="string" required
+                    [value]="trip.EndLocation" />
+            </div>
+            <br/>
+
+            <div mat-form-field>
+                <label><b>End Time</b></label><br />
+                <input matInput placeholder="EndTime" formControlName="EndTime" type="EndTime" required
+                    [value]="trip.EndTime" />
+            </div>
+        </div>
+        <br/>
+
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    </form>
+</div>
+
+<a mat-button routerLink="/buddies">Back to List</a>

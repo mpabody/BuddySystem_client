@@ -16,6 +16,7 @@ export class AuthService {
   userInfo: Token;
   role: string;
   loggedIn: boolean;
+  isAdmin: boolean;
 
   constructor(private http: HttpClient, private router: Router) {
     if (localStorage.getItem('id_token')) {
@@ -43,6 +44,9 @@ export class AuthService {
             this.role = role;
             localStorage.setItem('role', role);
             console.log(role);
+            if (role = "Admin") {
+              this.isAdmin = true;
+            }
           });
       });
       this.loggedIn = true;

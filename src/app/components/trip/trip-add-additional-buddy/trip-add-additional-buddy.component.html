@@ -17,11 +17,17 @@
             </select>
         </div>
 
-        <div>
+        <div hidden>
+            <mat-form-field>
+                <input matInput placeholder="Trip Id" formControlName="TripId" type="number" required />
+            </mat-form-field>
+        </div>
+
+        <!-- <div>
             <mat-form-field>
                 <input matInput placeholder="TripId" formControlName="TripId" type="TripId" required />
             </mat-form-field>
-        </div>
+        </div> -->
         <button mat-raised-button class="nav-btn" color="primary" type="submit">Add Buddy To This Trip</button>
     </div>
 </form>

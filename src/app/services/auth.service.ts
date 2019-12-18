@@ -34,7 +34,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       let email = '';
-
+      
       this.currentUser().subscribe((user: UserInfo) => {
         email = user.Email;
         

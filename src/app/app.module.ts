@@ -60,7 +60,7 @@ const routes = [
       { path: 'TripsForCurrentUser', component: TripsForCurrentUserIndexComponent},
       { path: 'edit/:id', component: TripEditComponent },
       { path: 'delete/:id', component: TripDeleteComponent},
-      { path: 'addAdditionalBuddy', component: TripAddAdditionalBuddyComponent},
+      { path: 'addAdditionalBuddy/:id', component: TripAddAdditionalBuddyComponent},
       { path: 'removeAdditionalBuddy/:additionalBuddyId', component: TripRemoveAdditionalBuddyComponent}
 
     ]

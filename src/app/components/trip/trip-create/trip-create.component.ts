@@ -35,9 +35,6 @@ export class TripCreateComponent implements OnInit {
     this.tripForm = this.form.group({
       StartTime: new FormControl,
       BuddyId: new FormControl,
-      // BuddyId: this.buddyService.getCurrentUserBuddy().subscribe((buddy: Buddy) => {
-      //   this.buddyId = buddy.BuddyId;
-      // }),
       VolunteerId: new FormControl,
       StartLocation: new FormControl,
       ProjectedEndLocation: new FormControl,

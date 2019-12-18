@@ -9,5 +9,5 @@ switch (window.location.hostname) {
     APIURL = 'https://buddysystemwebapi.azurewebsites.net'
     break;
     default:
-      APIURL = 'http://localhost:44365';
+      APIURL = 'https://localhost:44365';
 }
